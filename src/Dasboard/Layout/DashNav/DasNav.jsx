@@ -16,12 +16,12 @@ const DasNav = () => {
                         {/* You can open the modal using document.getElementById('ID').showModal() method */}
                         <div className="btn"
                             onClick={() =>
-                                document.getElementById('my_modal_4').showModal()}>
+                                document.getElementById('my_modal_3').showModal()}>
                             <IoMdAdd />
                             <p>Add New Task</p>
 
                         </div>
-                        <dialog id="my_modal_4" className="modal">
+                        <dialog id="my_modal_3" className="modal">
                             <div className="modal-box w-11/12 max-w-5xl">
                                 <form className="space-y-4">
                                     <div className='flex gap-x-5'>
@@ -61,7 +61,12 @@ const DasNav = () => {
                                     </div>
                                     
                                 </form>
-                                
+                                <div className="modal-action">
+                                    <form method="dialog">
+                                        {/* if there is a button in form, it will close the modal */}
+                                        <button className="btn">Close</button>
+                                    </form>
+                                </div>
                             </div>
                         </dialog>
                     </div>
