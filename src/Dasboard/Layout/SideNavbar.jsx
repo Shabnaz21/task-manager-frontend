@@ -2,7 +2,7 @@ import { MdOutlineRateReview } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
 import { AiOutlineProfile } from "react-icons/ai";
 import { RiSecurePaymentLine } from "react-icons/ri";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const SideNavbar = () => {
@@ -16,9 +16,11 @@ const SideNavbar = () => {
                     id="sidenav">
                     <div className="flex items-center w-full px-4 pt-4 pb-4 border-b border-gray-600
                      ">
-                        <span className="self-center whitespace-nowrap text-2xl font-semibold 
+                        <Link to='/'>
+                            <div className="self-center whitespace-nowrap text-2xl font-semibold 
                    text-white tracking-widest">
-                            TaskFlowHub</span>
+                                TaskFlowHub</div>
+                        </Link>
                     </div>
                     <div className="pb-6 mt-4 overflow-x-hidden overflow-y-auto">
                         <ul className="mb-8 text-sm">
