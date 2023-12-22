@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <section className="bg-primary text-white">
             <footer className="footer items-center p-4 container mx-auto">
-                <aside className="items-center grid-flow-col">
-                    <p className="text-lg font-bold">TaskFlowHub</p>
+                <aside className="items-center grid-flow-row">
+                    <p className="text-lg font-bold">SCC Technovision Inc.</p>
                     <p>Copyright © 2023 - All right reserved</p>
                 </aside>
                 <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

@@ -1,6 +1,5 @@
 import { MdOutlineRateReview } from "react-icons/md";
 import { ImProfile } from "react-icons/im";
-import { AiOutlineProfile } from "react-icons/ai";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { Link, NavLink } from 'react-router-dom';
 
@@ -18,7 +17,7 @@ const SideNavbar = () => {
                      ">
                         <Link to='/'>
                             <div className="self-center whitespace-nowrap text-2xl font-semibold 
-                   text-white tracking-widest">
+                   text-white tracking-wide">
                                 SCC Technovision Inc.</div>
                         </Link>
                     </div>
@@ -34,16 +33,7 @@ const SideNavbar = () => {
                                         <li className="mb-2 flex items-center gap-3">
                                             <ImProfile ></ImProfile>My Profile
                                         </li></NavLink>
-                                    <NavLink to=''
-                                        className={({ isActive }) =>
-                                            isActive ? 'flex items-center px-6 text-[#5fd2e9] md:text-lg' : 'flex px-6 items-center md:text-lg'
-                                        }
-                                    >
-                                        <li className="mb-2 flex items-center gap-3">
-                                            <AiOutlineProfile />
-                                            Task Overview 
-                                        </li>
-                                    </NavLink>
+                                  
                                     <NavLink to=''
                                         className={({ isActive }) =>
                                             isActive ?
@@ -53,7 +43,7 @@ const SideNavbar = () => {
 
                                     >
                                         <li className="mb-2 flex items-center gap-3">
-                                            <RiSecurePaymentLine /> Task Lists</li>
+                                            <RiSecurePaymentLine /> TODO Lists</li>
                                     </NavLink>
                                     <NavLink to='/dashboard/my-reviews'
                                         className={({ isActive }) =>

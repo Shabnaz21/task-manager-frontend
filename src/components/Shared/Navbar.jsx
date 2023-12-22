@@ -35,7 +35,7 @@ const Navbar = () => {
                           {menu}
                         </ul>
                     </div>
-                    <a className="font-semibold text-2xl tracking-widest">SCC Technovision Inc.</a>
+                    <a className="font-semibold text-2xl tracking-wider">SCC Technovision Inc.</a>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-2 gap-x-8">
