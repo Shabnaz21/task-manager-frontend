@@ -1,19 +1,18 @@
-
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
+import { AuthContext } from "../auth/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { useState } from "react";
+import useAxios from "../Hooks/useAxios";
 import Swal from "sweetalert2";
-import useAxios from "../../Hooks/useAxios";
 import SocialLogin from "./SocialLogin";
 
+
 const Register = () => {
-    const navigate = useNavigate();
-    const { createUser } = useAuth();
+    const { createUser } = useContext(AuthContext);
     const axios = useAxios();
+    const navigate = useNavigate();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -22,8 +21,10 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         form.reset();
+        const data = { name, photo, email, password }
+        console.log(data);
 
-        // // Create User
+        // Create User
         createUser(email, password,
             name, photo)
             .then(result => {
@@ -58,16 +59,10 @@ const Register = () => {
                     .catch((error) => {
                         console.log(error.message);
                     });
-
             })
             .catch(error => {
                 if (error.code === 'Error (auth/email-already-in-use') {
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Do you want to continue',
-                        icon: 'error',
-                        confirmButtonText: 'Cool'
-                    })
+                    // toast.error('Already, You\'r exist!');
                     return ('error.message');
                 }
 
@@ -77,7 +72,6 @@ const Register = () => {
                 console.log(error.message);
 
             })
-
         // Password condition
         if (password.length < 6) {
             setError('Password should be at least 6 characters');
@@ -100,13 +94,6 @@ const Register = () => {
             <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
                 <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
                     <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
-                        <div className="flex place-content-center">
-                            {/* logo */}
-                            <img src="https://i.ibb.co/Vjvym7r/logo.png" className="mr-3 h-6 sm:h-9" alt="NewVilla Logo" />
-                            <span className="self-center whitespace-nowrap text-2xl font-semibold 
-                    dark:text-white font-poppins">
-                                NewVilla</span>
-                        </div>
                         <div className="mt-12 flex flex-col items-center">
                             <h1 className="text-2xl xl:text-3xl font-poppins font-bold">
                                 Create a Account
@@ -159,11 +146,11 @@ const Register = () => {
                                     Or Sign Up with Social
                                 </div>
                             </div>
-                            <SocialLogin></SocialLogin>
+                         <SocialLogin></SocialLogin>
                         </div>
                     </div>
                     <div className="flex-1 hidden lg:flex">
-                        <img src="https://i.ibb.co/PNgfNzN/sign-concept-illustration-114360-125.png" alt="" />
+                        <img src="https://i.ibb.co/rbD2Kk5/online-registration-4489363-3723270.png" alt="" />
                     </div>
                 </div>
             </div>

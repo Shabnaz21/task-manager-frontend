@@ -1,16 +1,17 @@
 import { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
-import Swal from "sweetalert2";
 import SocialLogin from "./SocialLogin";
+import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
+// import useAuth from "../Hooks/useAuth";
+// import Swal from "sweetalert2";
 
 
 const Login = () => {
     const emailRef = useRef(null);
-    const { signIn } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
-
+    const { signIn } = useAuth();
     const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
@@ -66,6 +67,7 @@ const Login = () => {
                     return;
                 }
             });
+        
     }
     return (
         <>
@@ -75,12 +77,7 @@ const Login = () => {
                         <img src="https://i.ibb.co/93qLr3B/login-concept-illustration-114360-748.jpg" alt="" />
                     </div>
                     <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
-                        <div className="flex place-content-center">
-                            <img src="https://i.ibb.co/Vjvym7r/logo.png" className="mr-3 h-6 sm:h-9" alt="NewVilla Logo" />
-                            <span className="self-center whitespace-nowrap text-2xl font-semibold 
-                    dark:text-white font-poppins">
-                                NewVilla</span>
-                        </div>
+                       
                         <div className="mt-12 flex flex-col items-center">
                             <h1 className="text-2xl xl:text-3xl font-poppins font-semibold">
                                 Login
@@ -122,7 +119,6 @@ const Login = () => {
                                                 Sign Up
                                             </span>
                                         </Link>
-
                                     </p>
                                 </form>
                             </div>

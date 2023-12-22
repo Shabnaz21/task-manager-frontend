@@ -19,7 +19,7 @@ const SideNavbar = () => {
                         <Link to='/'>
                             <div className="self-center whitespace-nowrap text-2xl font-semibold 
                    text-white tracking-widest">
-                                TaskFlowHub</div>
+                                SCC Technovision Inc.</div>
                         </Link>
                     </div>
                     <div className="pb-6 mt-4 overflow-x-hidden overflow-y-auto">

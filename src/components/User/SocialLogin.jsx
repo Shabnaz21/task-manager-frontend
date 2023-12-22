@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
+
 import Swal from "sweetalert2";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import useAxios from "../Hooks/useAxios";
+import { useContext } from "react";
+import { AuthContext } from "../auth/AuthProvider";
 
 
 const SocialLogin = () => {
     const axios = useAxios();
     const navigate = useNavigate();
-    const { googleSignIn, githubSignIn } = useAuth();
+    const { googleSignIn, githubSignIn } = useContext(AuthContext)
 
     //google
     const handleGoogleSignIn = () => {

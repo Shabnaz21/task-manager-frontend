@@ -10,8 +10,6 @@ import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
 
 
-
-
 export const AuthContext = createContext(null);
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider();
@@ -81,7 +79,6 @@ const AuthProvider = ({ children }) => {
         googleSignIn,
         githubSignIn,
         logOut
-
     }
 
     return (
