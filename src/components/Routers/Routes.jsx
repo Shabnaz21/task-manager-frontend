@@ -4,6 +4,7 @@ import {
 import Home from "../../Home/Home";
 import Root from "../Shared/Root";
 import Error from "../Shared/Error";
+import DashboardLayout from "../../Dasboard/Layout/Dashboardlayout";
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/dashboard',
+        element:<DashboardLayout></DashboardLayout>
+    }
+   
 ]);
 
 export default router;

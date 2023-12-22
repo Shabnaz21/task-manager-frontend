@@ -37,14 +37,12 @@ const Navbar = () => {
                     </div>
                     <a className="font-semibold text-2xl tracking-widest">TaskFlowHub</a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-2 gap-x-2">
+                <div className="navbar-end hidden lg:flex">
+                    <ul className="menu menu-horizontal px-2 gap-x-8">
                        {menu}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn btn-primary">Button</a>
-                </div>
+               
             </div>
         </section>
     );
